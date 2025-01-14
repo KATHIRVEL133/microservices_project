@@ -19,7 +19,7 @@ public class ProductService {
 
   private final ProductRepository productRepository;
 
-  public void createProduct(ProductRequest productRequest)
+  public ProductResponse createProduct(ProductRequest productRequest)
   {
    Product product = Product.builder()
                      .name(productRequest.getName())
@@ -27,7 +27,15 @@ public class ProductService {
                      .price(productRequest.getPrice())
                      .build();
    productRepository.save(product);
-   log.info("product {} saved successfully",product.getId());
+   ProductResponse productResponse = ProductResponse
+                                     .builder()
+                                     .id(product.getId())
+                                     .name(product.getName())
+                                     .description(product.getDescription())
+                                     .price(product.getPrice())
+                                     .build();
+     log.info("product {} saved successfully",product.getId());
+     return productResponse;
   }
 
 public List<ProductResponse> getAllProducts() {
@@ -37,7 +45,7 @@ public List<ProductResponse> getAllProducts() {
 public ProductResponse productToResponse(Product product)
 {
  return ProductResponse.builder()
-       .Id(product.getId())
+       .id(product.getId())
        .name(product.getName())
        .description(product.getDescription())
        .price(product.getPrice())

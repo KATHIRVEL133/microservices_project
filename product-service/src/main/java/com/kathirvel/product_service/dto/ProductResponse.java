@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductResponse {
-    private String Id;
+    private String id;
     private String name;
     private String description;
     private BigDecimal price;
