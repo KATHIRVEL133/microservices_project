@@ -6,6 +6,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "OrderServiceApplication",
+            "request": "launch",
+            "mainClass": "com.microservices.order_service.OrderServiceApplication",
+            "projectName": "order-service",
+            "env": {
+                "USERNAME":"root",
+                "PASSWORD":"KathirSiva123@"
+            }
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -17,9 +28,8 @@
             "mainClass": "com.kathirvel.product_service.ProductServiceApplication",
             "projectName": "product-service",
             "env": {
-                "DATABASE_URL":"mongodb+srv://velkathir259:velkathir259@cluster0.xccy7.mongodb.net/myDatabase?retryWrites=true&w=majority&appName=Cluster0",
-                "DATABASE_NAME":"products"
-
+                "DATABASE_URL": "mongodb+srv://velkathir259:velkathir259@cluster0.xccy7.mongodb.net/myDatabase?retryWrites=true&w=majority&appName=Cluster0",
+                "DATABASE_NAME": "products"
             }
         }
     ]
